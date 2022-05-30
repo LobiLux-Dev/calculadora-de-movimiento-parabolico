@@ -13,15 +13,8 @@ const actualizar = () => {
 	Vy0.innerHTML = Number((v0Txt.value * Math.sin(a0Txt.value * Math.PI / 180)).toFixed(4))
 }
 
-const updateEvent = (evt, func) => {
-	v0Txt.addEventListener(evt, func)
-	a0Txt.addEventListener(evt, func)
-	tTxt.addEventListener(evt, func)
-}
-
-updateEvent('keyup', () => {
-	actualizar()
-})
-updateEvent('keypress', e => e.charCode>=48 && e.charCode<=57)
+v0Txt.addEventListener('keyup', () => actualizar())
+a0Txt.addEventListener('keyup', () => actualizar())
+tTxt.addEventListener('keyup', () => actualizar())
 
 actualizar()

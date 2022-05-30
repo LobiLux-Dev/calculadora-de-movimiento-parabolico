@@ -18,7 +18,7 @@
           <div class="col-md-6 mb-3">
             <div class="input-group">
               <label for="v0-txt" class="input-group-text">Velocidad Inicial [v<sub>0</sub>]</label>
-              <input type="number" id="v0-txt" class="form-control text-end" placeholder="Velocidad Inicial" />
+              <input type="number" id="v0-txt" class="form-control text-end" placeholder="Velocidad Inicial" ondrop="return false;" onpaste="return false;" onkeypress="return event.charCode>=48 && event.charCode<=57" />
               <span class="input-group-text">m/s</span>
             </div>
           </div>
@@ -26,7 +26,7 @@
           <div class="col-md-6 mb-3">
             <div class="input-group">
               <label for="a0-txt" class="input-group-text">&Aacute;ngulo Inicial [&#945;]</label>
-              <input type="number" id="a0-txt" class="form-control text-end" placeholder="&Aacute;ngulo inicial" min="0" />
+              <input type="number" id="a0-txt" class="form-control text-end" placeholder="&Aacute;ngulo inicial" ondrop="return false;" onpaste="return false;" onkeypress="return event.charCode>=48 && event.charCode<=57" />
               <span class="input-group-text">&ordm;</span>
             </div>
           </div>
@@ -34,7 +34,7 @@
           <div class="col-md-6 mx-auto">
             <div class="input-group">
               <label for="t-txt" class="input-group-text">Tiempo [t]</label>
-              <input type="number" id="t-txt" class="form-control text-end" placeholder="Tiempo" min="0" />
+              <input type="number" id="t-txt" class="form-control text-end" placeholder="Tiempo" ondrop="return false;" onpaste="return false;" onkeypress="return event.charCode>=48 && event.charCode<=57" />
               <span class="input-group-text">s</span>
             </div>
           </div>
