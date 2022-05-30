@@ -18,15 +18,15 @@
           <div class="col-md-6 mb-3">
             <div class="input-group">
               <label for="v0-txt" class="input-group-text">Velocidad Inicial [v<sub>0</sub>]</label>
-              <input type="number" id="v0-txt" class="form-control text-end" placeholder="Velocidad Inicial" min="0" />
+              <input type="number" id="v0-txt" class="form-control text-end" placeholder="Velocidad Inicial" />
               <span class="input-group-text">m/s</span>
             </div>
           </div>
           <!-- Ángulo Inicial -->
           <div class="col-md-6 mb-3">
             <div class="input-group">
-              <label for="a-txt" class="input-group-text">&Aacute;ngulo Inicial [&#945;]</label>
-              <input type="number" id="a-txt" class="form-control text-end" placeholder="&Aacute;ngulo inicial" min="0" />
+              <label for="a0-txt" class="input-group-text">&Aacute;ngulo Inicial [&#945;]</label>
+              <input type="number" id="a0-txt" class="form-control text-end" placeholder="&Aacute;ngulo inicial" min="0" />
               <span class="input-group-text">&ordm;</span>
             </div>
           </div>
@@ -40,6 +40,52 @@
           </div>
         </div>
       </div>
+      <div class="row">
+        <div class="col text-center">
+          <div>
+            <p>
+              Un cuerpo lanzado con una velocidad inicial de
+              <span> v = <b id="v0-lb"></b> m/s </span>
+              y un &aacute;ngulo de
+              <span> &#945; = <b id="a0-lb"></b>&ordm; </span>
+              iniciar&aacute; su trayectoria con una velocidad horizontal de
+              <span> v<sub>x0</sub> = <b id="Vx0"></b> m/s </span>
+              y una velocidad vertical de
+              <span> v<sub>y0</sub> = <b id="Vy0"></b> m/s </span>
+            </p>
+            <p>
+              Si el cuerpo inicia su trayectoria desde la posici&oacute;n
+              <span> x = <b>0</b>m</span>
+              y altura
+              <span> y = <b>0</b>m,</span>
+              los par&aacute;metros m&aacute;s relevantes de su trayectoria son:
+            </p>
+          </div>
+          <div>
+            <p>
+              Maxima altura:
+              <span> h<sub>max</sub> = <b id="alturaMaxima"></b> m </span>
+            </p>
+            <p>
+              Tiempo hasta m&aacute;xima altura:
+              <span>
+                t<sub>h<sub>max</sub></sub> = <b id="tiempoMaximaAltura"></b> s</span>
+            </p>
+            <p>
+              M&aacute;ximo alcance:
+              <span>
+                x<sub>f</sub> = <b id="maximoAlcance1"></b> m, &#916;x = x<sub>f</sub>
+                - x<sub>0</sub> = <b id="maximoAlcance2"></b> m
+              </span>
+            </p>
+            <p>
+              Tiempo total:
+              <span> t<sub>total</sub> = <b id="tiempoTotal"></b> s </span>
+            </p>
+          </div>
+        </div>
+      </div>      
     </div>
+    <script src="./src/js/script.js"></script>
   </body>
 </html>
