@@ -1,104 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tiro Parab&oacute;lico</title>
-    <link
-      rel="shortcut icon"
-      href="https://bit.ly/3z70WuP"
-      type="image/x-icon"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="./src/css/style.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiro Parabólico</title>
+    <link rel="shortcut icon" href="https://bit.ly/3z70WuP" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="./src/css/style.css">
   </head>
   <body>
-    <h1 class="text-center">Movimiento Parab&oacute;lico</h1>
+    <h1 class="text-center">Movimiento Parabólico</h1>
     <div class="col-10 mx-auto">
+      <!-- Inputs -->
+      <!-- Velocidad Inicial, Ángulo Inicial y Tiempo -->
       <div>
         <div class="row mb-3">
           <!-- Velocidad Inicial -->
           <div class="col-md-6 mb-3">
             <div class="input-group">
-              <label for="v0-txt" class="input-group-text"
-                >Velocidad Inicial [v<sub>0</sub>]</label
-              >
-              <input
-                type="number"
-                id="v0-txt"
-                class="form-control text-end"
-                placeholder="Velocidad Inicial"
-                ondrop="return false;"
-                onpaste="return false;"
-                onkeypress="return event.charCode>=48 && event.charCode<=57"
-              />
+              <label for="v0-txt" class="input-group-text">Velocidad Inicial [v<sub>0</sub>]</label>
+              <input type="number" id="v0-txt" class="form-control text-end" placeholder="Velocidad Inicial" ondrop="return false;" onpaste="return false;" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46">
               <span class="input-group-text">m/s</span>
             </div>
           </div>
           <!-- Ángulo Inicial -->
           <div class="col-md-6 mb-3">
             <div class="input-group">
-              <label for="a0-txt" class="input-group-text"
-                >&Aacute;ngulo Inicial [&#945;]</label
-              >
-              <input
-                type="number"
-                id="a0-txt"
-                class="form-control text-end"
-                placeholder="&Aacute;ngulo inicial"
-                ondrop="return false;"
-                onpaste="return false;"
-                onkeypress="return event.charCode>=48 && event.charCode<=57"
-              />
-              <span class="input-group-text">&ordm;</span>
+              <label for="a0-txt" class="input-group-text">Ángulo Inicial [α]</label>
+              <input type="number" id="a0-txt" class="form-control text-end" placeholder="Ángulo inicial" ondrop="return false;" onpaste="return false;" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46">
+              <span class="input-group-text">º</span>
             </div>
           </div>
           <!-- Tiempo -->
-          <div class="col-md-6 mx-auto" style="visibility: hidden;">
+          <div class="col-md-6 mx-auto">
             <div class="input-group">
               <label for="t-txt" class="input-group-text">Tiempo [t]</label>
-              <input
-                type="number"
-                id="t-txt"
-                class="form-control text-end"
-                placeholder="Tiempo"
-                ondrop="return false;"
-                onpaste="return false;"
-                onkeypress="return event.charCode>=48 && event.charCode<=57"
-              />
+              <input type="number" id="t-txt" class="form-control text-end" placeholder="Tiempo" ondrop="return false;" onpaste="return false;" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46">
               <span class="input-group-text">s</span>
             </div>
           </div>
         </div>
       </div>
-      <div id="datos-tiro" class="row">
+      <div class="row">
         <div class="col text-center">
           <div>
             <p>
               Un cuerpo lanzado con una velocidad inicial de
-              <span>v = <b id="v0-lb"></b>m/s</span>
-              y un &aacute;ngulo de
-              <span>&#945; = <b id="a0-lb"></b>&ordm;</span>
-              iniciar&aacute; su trayectoria con una velocidad horizontal de
-              <span>v<sub>x0</sub> = <b id="Vx0"></b>m/s</span>
-              y una velocidad vertical de
-              <span>v<sub>y0</sub> = <b id="Vy0"></b>m/s</span>
+              <span>v = <b id="v0-lb"></b>m/s</span> y un ángulo de
+              <span>α = <b id="a0-lb"></b>º</span> iniciará su trayectoria con una velocidad
+              horizontal de <span>v<sub>x0</sub> = <b id="Vx0"></b>m/s</span> y una
+              velocidad vertical de <span>v<sub>y0</sub> = <b id="Vy0"></b>m/s</span>
             </p>
             <p>
-              Si el cuerpo inicia su trayectoria desde la posici&oacute;n
+              Si el cuerpo inicia su trayectoria desde la posición
               <span>x = <b>0</b>m</span> y altura <span>y = <b>0</b>m,</span>
-              los par&aacute;metros m&aacute;s relevantes de su trayectoria son:
+              los parámetros más relevantes de su trayectoria son:
             </p>
           </div>
           <div>
             <p>
-              M&aacute;ximo alcance:
+              Máximo alcance:
               <span>x<sub>max</sub> = <b id="xmax"></b>m</span>
             </p>
             <p>
@@ -106,14 +68,37 @@
               <span>y<sub>max</sub> = <b id="ymax"></b>m</span>
             </p>
             <p>
-              Tiempo hasta m&aacute;xima altura:
-              <span
-                >t<sub>y<sub>max</sub></sub> = <b id="tymax"></b>s</span
-              >
+              Tiempo hasta máxima altura:
+              <span>t<sub>y<sub>max</sub></sub> = <b id="tymax"></b>s</span>
             </p>
             <p>
               Tiempo total:
               <span> t<sub>total</sub> = <b id="ttotal"></b>s</span>
+            </p>
+          </div>
+          <div>
+            <p>En este instante la posición, velocidad y ángulo de la trayectoria son:</p>
+          </div>
+          <div>
+            <p>
+              Posición horizontal:
+              <span>x = <b id="x"></b>m</span>
+            </p>
+            <p>
+              Posición vertical:
+              <span>y = <b id="y"></b>m</span>
+            </p>
+            <p>
+              Velocidad horizontal:
+              <span>v<sub>x</sub> = <b id="vx"></b>m/s</span>
+            </p>
+            <p>
+              Velocidad vertical:
+              <span>v<sub>y</sub> = <b id="vy"></b>m/s</span>
+            </p>
+            <p>
+              Ángulo de la trayectoria:
+              <span>α = <b id="a"></b>º</span>
             </p>
           </div>
         </div>
