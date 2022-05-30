@@ -1,3 +1,7 @@
+body {
+  background: #E8F9FD;
+}
+
 .text-end::placeholder {
   text-align: start;
 }
@@ -12,6 +16,6 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-[class="col-md-6 mx-auto"] {
+#datos-tiro {
   visibility: hidden;
 }

@@ -11,7 +11,12 @@ const tymax = document.getElementById("tymax");
 const ttotal = document.getElementById("ttotal");
 
 const actualizar = () => {
-  document.getElementById("datos-tiro").style.visibility = v0Txt.value == '' && a0Txt.value == '' ? "hidden" : "visible";
+  document.getElementById("datos-tiro").style.visibility =
+    (v0Txt.value == "" && a0Txt.value == "") ||
+    (v0Txt.value == "" && a0Txt.value != "") ||
+    (v0Txt.value != "" && a0Txt.value == "")
+      ? "hidden"
+      : "visible";
 
   v0Lb.innerHTML = Number(v0Txt.value);
   a0Lb.innerHTML = Number(a0Txt.value);
