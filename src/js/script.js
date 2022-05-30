@@ -19,19 +19,32 @@ const actualizar = () => {
   Vy0.innerHTML = Number(
     (v0Txt.value * Math.sin((a0Txt.value * Math.PI) / 180)).toFixed(4)
   );
-  xmax.innerHTML = Number(
-    (v0Txt.value ** 2 * Math.sin((2 * a0Txt.value * Math.PI) / 180)) / 9.81
-  ).toFixed(4);
-  ymax.innerHTML = Number(
-    (v0Txt.value ** 2 * Math.sin((a0Txt.value * Math.PI) / 180) ** 2) /
-      (2 * 9.81)
-  ).toFixed(4);
-  tymax.innerHTML = Number(
-    (v0Txt.value * Math.sin((a0Txt.value * Math.PI) / 180)) / 9.81
-  ).toFixed(4);
-  ttotal.innerHTML = Number(
-    (2 * v0Txt.value * Math.sin((a0Txt.value * Math.PI) / 180)) / 9.81
-  ).toFixed(4);
+  xmax.innerHTML =
+    Number(v0Txt.value == 0) || Number(a0Txt.value == 0)
+      ? 0
+      : Number(
+          (v0Txt.value ** 2 * Math.sin((2 * a0Txt.value * Math.PI) / 180)) /
+            9.81
+        ).toFixed(4);
+  ymax.innerHTML =
+    Number(v0Txt.value == 0) || Number(a0Txt.value == 0)
+      ? 0
+      : (
+          (v0Txt.value ** 2 * Math.sin((a0Txt.value * Math.PI) / 180) ** 2) /
+          (2 * 9.81)
+        ).toFixed(4);
+  tymax.innerHTML =
+    Number(v0Txt.value == 0) || Number(a0Txt.value == 0)
+      ? 0
+      : Number(
+          (v0Txt.value * Math.sin((a0Txt.value * Math.PI) / 180)) / 9.81
+        ).toFixed(4);
+  ttotal.innerHTML =
+    Number(v0Txt.value == 0) || Number(a0Txt.value == 0)
+      ? 0
+      : Number(
+          (2 * v0Txt.value * Math.sin((a0Txt.value * Math.PI) / 180)) / 9.81
+        ).toFixed(4);
 };
 
 v0Txt.addEventListener("keyup", () => actualizar());
